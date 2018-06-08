@@ -65,10 +65,10 @@ app.get('/sendfile', function (req, res) {
 
 })
 
-var server = app.listen(8080, function () {
-  var host = server.address().address
-  var port = server.address().port
+var port = process.env.PORT || 8080;
 
+var server = app.listen(port, function () {
+  var host = server.address().address
   console.log("started app & listening at http://%s:%s", host, port)
 })
 
