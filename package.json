@@ -1,0 +1,23 @@
+{
+  "name": "send-mail",
+  "version": "1.0.0",
+  "description": "send file as email",
+  "main": "index.js",
+  "private": true,
+  "dependencies": {
+    "express": "4.16.2",
+    "https": "",
+    "nodemailer":""
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "package": "rm -rf node_modules; npm install --production; zip -r bb-graph-metadata.zip ./*.js node_modules;",
+    "deploy-minor": "npm version minor --force -m \"version %s\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.dev.global.tesco.org/Transport-and-Tracking/bb-graph-metadata.git"
+  },
+  "author": "anurag.alw@gmail.com",
+  "license": "UNLICENSED"
+}
