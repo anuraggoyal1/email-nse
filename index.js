@@ -55,7 +55,7 @@ app.get('/sendfile', function (req, res) {
 
     const mailOptions = {
       from: email_id, // sender address
-      to: 'anurag.alw.proxy@gmail.com', // list of receivers
+      to: 'anurag.alw@gmail.com', // list of receivers
       subject: s, // Subject line
       html: '<p>NSE Full data attached</p>',// plain text body
       attachments: [
