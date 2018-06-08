@@ -10,7 +10,7 @@
     "nodemailer": ""
   },
   "scripts": {
-    "start": "node index.js"
+    "start": "npm install --production;node index.js"
   },
   "repository": {
     "type": "git",
