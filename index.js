@@ -1,10 +1,12 @@
 var nodemailer = require('nodemailer');
 var express = require('express');
 var app = express();
+var smtpTransport = require('nodemailer-smtp-transport');
+
 var url = "https://www.nseindia.com/products/content/sec_bhavdata_full.csv";
 
-var email_id=process.env.EMAIL_ID;
-var email_password=process.env.EMAIL_PASSWORD
+var email_id = process.env.EMAIL_ID;
+var email_password = process.env.EMAIL_PASSWORD
 var download = function (url, cb) {
   var data = "";
   var request = require("https").get(url, function (res) {
@@ -27,6 +29,21 @@ var download = function (url, cb) {
   });
 }
 
+
+var port = process.env.PORT || 8080;
+
+var server = app.listen(port, function () {
+  var host = server.address().address
+  console.log("started app & listening at http://%s:%s", host, port)
+})
+
+var transporter = nodemailer.createTransport(smtpTransport({
+  service: 'gmail',
+  auth: {
+    user: email_id,
+    pass: email_password
+  }
+}));
 
 
 
@@ -65,20 +82,7 @@ app.get('/sendfile', function (req, res) {
 
 })
 
-var port = process.env.PORT || 8080;
 
-var server = app.listen(port, function () {
-  var host = server.address().address
-  console.log("started app & listening at http://%s:%s", host, port)
-})
-
-var transporter = nodemailer.createTransport({
-  service: 'gmail',
-  auth: {
-    user: email_id,
-    pass: email_password
-  }
-});
 
 
 
