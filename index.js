@@ -1,8 +1,6 @@
 var nodemailer = require('nodemailer');
 var express = require('express');
 var app = express();
-var smtpTransport = require('nodemailer-smtp-transport');
-
 var url = "https://www.nseindia.com/products/content/sec_bhavdata_full.csv";
 
 var email_id = process.env.EMAIL_ID;
@@ -37,13 +35,16 @@ var server = app.listen(port, function () {
   console.log("started app & listening at http://%s:%s", host, port)
 })
 
-var transporter = nodemailer.createTransport(smtpTransport({
-  service: 'gmail',
+var transporter = nodemailer.createTransport({
+  //service: 'gmail',
+  host: 'smtp.gmail.com',
+  port: 587,
+  secure: false,
   auth: {
     user: email_id,
     pass: email_password
   }
-}));
+});
 
 
 
