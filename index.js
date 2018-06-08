@@ -36,10 +36,7 @@ var server = app.listen(port, function () {
 })
 
 var transporter = nodemailer.createTransport({
-  //service: 'gmail',
-  host: 'smtp.gmail.com',
-  port: 587,
-  secure: false,
+  service: 'yahoo',
   auth: {
     user: email_id,
     pass: email_password
