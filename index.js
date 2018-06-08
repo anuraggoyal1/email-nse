@@ -36,7 +36,7 @@ var server = app.listen(port, function () {
 })
 
 var transporter = nodemailer.createTransport({
-  service: 'yahoo',
+  service: 'hotmail',
   auth: {
     user: email_id,
     pass: email_password
