@@ -31,10 +31,6 @@ var download = function (url, cb) {
 
 
 app.get('/sendfile', function (req, res) {
-  // res.send('Hello World');
-
-  console.log(email_id);
-  console.log(email_password);
 
   download(url, function (error, fileData) {
     var s = 'NSE Full data';
