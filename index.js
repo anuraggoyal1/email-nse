@@ -75,7 +75,7 @@ app.get('/sendfile', function (req, res) {
       html: '<p>NSE Full data attached</p>',// plain text body
       attachments: [
         {
-          filename: "sec_bhavdata_full_" + getDate(),
+          filename: "sec_bhavdata_full_" + getDate()+".csv",
           content: fileData
         }
       ]
