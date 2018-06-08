@@ -7,7 +7,10 @@
   "dependencies": {
     "express": "4.16.2",
     "https": "",
-    "nodemailer":""
+    "nodemailer": ""
+  },
+  "scripts": {
+    "start": "node index.js"
   },
   "repository": {
     "type": "git",
